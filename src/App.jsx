@@ -1,81 +1,44 @@
-import React from 'react';
-import Navbar from './components/Navbar.jsx';
-import Hero from './components/Hero.jsx';
-import Services from './components/Services.jsx';
-import Projects from './components/Projects.jsx';
+import { useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Reviews from './components/Reviews';
 
 export default function App() {
+  useEffect(() => {
+    // Smooth scroll behavior for in-page anchors
+    if ('scrollBehavior' in document.documentElement.style) {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen bg-neutral-950 text-white selection:bg-white/20 selection:text-white">
+    <div className="min-h-screen bg-neutral-950 text-white selection:bg-emerald-400 selection:text-black">
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <Projects />
+        <About />
+        <Reviews />
 
-        {/* Customer Review Card */}
-        <section id="reviews" className="py-24">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="flex items-end justify-between gap-6">
-              <div>
-                <h2 className="text-3xl font-semibold tracking-tight">What clients say</h2>
-                <p className="mt-3 max-w-2xl text-white/70">A snapshot of the experience working together.</p>
-              </div>
-            </div>
-
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <article className="col-span-1 sm:col-span-2 lg:col-span-3 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur">
-                <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
-                  <div className="flex items-center gap-4">
-                    <img
-                      src="https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?q=80&w=256&auto=format&fit=crop"
-                      alt="Client headshot"
-                      className="h-12 w-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h3 className="font-semibold leading-tight">Alex Carter</h3>
-                      <p className="text-sm text-white/60">Product Lead, Nova Labs</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1 text-amber-300">
-                    {/* Star icons as inline SVG to avoid extra deps */}
-                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <span className="ml-2 text-sm text-white/70">5.0</span>
-                  </div>
-                </div>
-                <blockquote className="mt-6 text-base leading-relaxed text-white/80">
-                  “They delivered a polished frontend, a cohesive brand kit, and a punchy launch reel — all on a tight deadline. Communication was crisp and the quality was top-tier.”
-                </blockquote>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact CTA inline to keep components focused and at 4 total */}
-        <section id="contact" className="py-24">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-10 backdrop-blur">
-              <h2 className="text-3xl font-semibold tracking-tight">Let’s build something together</h2>
-              <p className="mt-3 text-white/70 max-w-2xl">Have a project in mind—web, video, or brand visuals? I can help you plan, design, and ship a cohesive experience across mediums.</p>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a href="mailto:hello@portfolio.dev" className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 font-medium text-neutral-900 transition hover:bg-white/90">
-                  Email me
-                </a>
-                <a href="#work" className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-3 font-medium text-white hover:bg-white/10">
-                  See recent work
-                </a>
-              </div>
+        <section id="contact" className="py-16 md:py-24 border-t border-white/10">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="bg-neutral-900/60 border border-white/15 p-6 md:p-8 shadow-[6px_6px_0_0_#000]">
+              <h3 className="text-2xl md:text-3xl font-black tracking-tight">Let’s team up</h3>
+              <p className="mt-2 text-neutral-300 max-w-2xl">Have a project in mind? I build retro-flavored, modern experiences. Reach out and let’s make something memorable.</p>
+              <a href="mailto:hello@example.com" className="mt-5 inline-block bg-emerald-400 text-black font-bold px-4 py-2 border-2 border-black shadow-[4px_4px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px]">Email me</a>
             </div>
           </div>
         </section>
       </main>
-      <footer className="border-t border-white/10 py-8 text-center text-sm text-white/60">
-        © {new Date().getFullYear()} Your Name — Frontend • Video • Design
+
+      <footer className="py-10 border-t border-white/10 text-center text-sm text-neutral-400">
+        © {new Date().getFullYear()} 8BIT.PORTFOLIO — Built with love and extra lives.
       </footer>
+
+      {/* 8-bit background grid */}
+      <div className="pointer-events-none fixed inset-0 -z-0 opacity-20" aria-hidden>
+        <div className="w-full h-full bg-[linear-gradient(90deg,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[length:16px_16px]" />
+      </div>
     </div>
   );
 }

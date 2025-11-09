@@ -1,35 +1,32 @@
-import React from 'react';
 import Spline from '@splinetool/react-spline';
+import { Rocket } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-[88vh] w-full overflow-hidden">
+    <section id="hero" className="relative h-[80vh] md:h-[90vh] text-white">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/41MGRk-UDPKO-l6W/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/OIGfFUmCnZ3VD8gH/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
-      {/* Subtle gradient at bottom for text readability */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-neutral-950 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black pointer-events-none" />
 
-      <div className="relative z-10 mx-auto grid h-full max-w-6xl place-items-end px-6 pb-24">
-        <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80 ring-1 ring-white/15 backdrop-blur">
-            Crafting for web • video • brands
-          </span>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-            Frontend Developer, Video Editor, and Graphic Designer
-          </h1>
-          <p className="mt-4 text-white/70">
-            I build fast, accessible web apps, cut compelling edits, and design clean visuals. A single partner for your digital presence.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#work" className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 font-medium text-neutral-900 transition hover:bg-white/90">
-              View projects
-            </a>
-            <a href="#services" className="inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-3 font-medium text-white hover:bg-white/10">
-              What I do
-            </a>
-          </div>
+      <div className="relative h-full max-w-6xl mx-auto px-4 md:px-6 flex flex-col justify-center">
+        <div className="inline-block w-fit bg-emerald-400 text-black font-black uppercase tracking-widest text-xs px-3 py-1 border-2 border-black shadow-[4px_4px_0_0_#000]">
+          8-bit interactive
+        </div>
+        <h1 className="mt-4 text-4xl md:text-6xl font-black tracking-tight drop-shadow-[4px_4px_0_#000]">
+          Pixel-perfect Frontend, Motion, and Design
+        </h1>
+        <p className="mt-3 md:mt-4 text-neutral-200 max-w-2xl">
+          I blend code, video, and graphics into playful, interactive experiences inspired by classic games.
+        </p>
+        <div className="mt-6 flex items-center gap-3">
+          <a href="#about" className="inline-flex items-center gap-2 bg-emerald-400 text-black font-bold px-4 py-2 border-2 border-black shadow-[4px_4px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px]">
+            <Rocket size={18}/> Start Quest
+          </a>
+          <a href="#reviews" className="inline-flex items-center gap-2 bg-white text-black font-bold px-4 py-2 border-2 border-black shadow-[4px_4px_0_0_#000] active:translate-x-[2px] active:translate-y-[2px]">
+            See Reviews
+          </a>
         </div>
       </div>
     </section>
