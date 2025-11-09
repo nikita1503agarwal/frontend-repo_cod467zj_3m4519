@@ -12,6 +12,49 @@ export default function App() {
         <Hero />
         <Services />
         <Projects />
+
+        {/* Customer Review Card */}
+        <section id="reviews" className="py-24">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="flex items-end justify-between gap-6">
+              <div>
+                <h2 className="text-3xl font-semibold tracking-tight">What clients say</h2>
+                <p className="mt-3 max-w-2xl text-white/70">A snapshot of the experience working together.</p>
+              </div>
+            </div>
+
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <article className="col-span-1 sm:col-span-2 lg:col-span-3 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur">
+                <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src="https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?q=80&w=256&auto=format&fit=crop"
+                      alt="Client headshot"
+                      className="h-12 w-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h3 className="font-semibold leading-tight">Alex Carter</h3>
+                      <p className="text-sm text-white/60">Product Lead, Nova Labs</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-amber-300">
+                    {/* Star icons as inline SVG to avoid extra deps */}
+                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <span className="ml-2 text-sm text-white/70">5.0</span>
+                  </div>
+                </div>
+                <blockquote className="mt-6 text-base leading-relaxed text-white/80">
+                  “They delivered a polished frontend, a cohesive brand kit, and a punchy launch reel — all on a tight deadline. Communication was crisp and the quality was top-tier.”
+                </blockquote>
+              </article>
+            </div>
+          </div>
+        </section>
+
         {/* Contact CTA inline to keep components focused and at 4 total */}
         <section id="contact" className="py-24">
           <div className="mx-auto max-w-6xl px-6">
